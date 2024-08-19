@@ -10,7 +10,6 @@ npm install flow-ui
 
 ## Usage
 
-
 ```js
 import { multiply } from 'flow-ui';
 
@@ -18,7 +17,6 @@ import { multiply } from 'flow-ui';
 
 const result = await multiply(3, 7);
 ```
-
 
 ## Contributing
 

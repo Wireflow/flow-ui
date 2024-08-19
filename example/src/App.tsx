@@ -1,18 +1,22 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'flow-ui';
+import { StyleSheet, Text, View } from 'react-native';
+import { Button, ThemeProvider, useTheme } from 'flow-ui';
 
-export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+const Content = () => {
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>{theme}</Text>
+      <Button title="Sign Up" onPress={toggleTheme} />
     </View>
+  );
+};
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <Content />
+    </ThemeProvider>
   );
 }
 
